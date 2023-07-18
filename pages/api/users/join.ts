@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import withHandler, { ResponseType } from "@lib/server/withHandler";
 import client from "@lib/server/client";
 import * as bcrypt from "bcryptjs";
+import { withApiSession } from "@lib/server/withSession";
 
 interface IReceivedData {
   email: string;
@@ -26,7 +27,7 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
   });
   if (!user) return res.json({ ok: false, error: "다시 시도해주세요" });
   req.session.user = {
-    id: user.id,
+    id: user?.id,
   };
   await req.session.save();
 
@@ -35,8 +36,10 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
   });
 }
 
-export default withHandler({
-  methods: ["POST"],
-  handler,
-  isPrivate: false,
-});
+export default withApiSession(
+  withHandler({
+    methods: ["POST"],
+    handler,
+    isPrivate: false,
+  })
+);
