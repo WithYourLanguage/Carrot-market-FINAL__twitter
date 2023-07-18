@@ -2,11 +2,13 @@ import { NextApiRequest, NextApiResponse } from "next";
 import withHandler, { ResponseType } from "@lib/server/withHandler";
 import client from "@lib/server/client";
 import * as bcrypt from "bcryptjs";
+import { withApiSession } from "@lib/server/withSession";
 
 async function handler(req: any, res: NextApiResponse<ResponseType>) {
   const { password, email } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 7);
-  // const user = email ? { email } : { email };
+  // const hashedPassword = await bcrypt.hash(password, 7);
+
+  // console.log(hashedPassword);
   const user = await client.user.findUnique({
     where: {
       email,
@@ -14,7 +16,16 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
   });
   if (user) {
     // user이 존제합니다. password 확인 작업을 진행하세요
-    if (user.password !== hashedPassword) {
+    const validPassword = await bcrypt.compare(password, user?.password as any);
+    /* if (user.password !== hashedPassword) {
+      console.log("PASSWORD CHECK", hashedPassword, password);
+      return res.json({
+        ok: false,
+        error: "비밀번호가 같지 않습니다",
+      });
+    } */
+    if (!validPassword) {
+      console.log("PASSWORD CHECK", password);
       return res.json({
         ok: false,
         error: "비밀번호가 같지 않습니다",
@@ -24,9 +35,14 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
       id: user.id,
     };
     await req.session.save();
+    console.log("JSON DATA OK를 보냅니다");
+    return res.json({
+      ok: true,
+    });
   } else {
     //  user이 존제하지 않습니다. 닉네임 설정 화면으로 이동시켜 user을 create하세요.
-    const data = {
+    console.log("USER NOT FOUND");
+    /* const data = {
       password,
       email,
     };
@@ -44,7 +60,7 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
     return res.json({
       ok: true,
       message: "user not found",
-    });
+    }); */
   }
 
   console.log(user);
@@ -54,8 +70,10 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
   });
 }
 
-export default withHandler({
-  methods: ["POST"],
-  handler,
-  isPrivate: false,
-});
+export default withApiSession(
+  withHandler({
+    methods: ["POST"],
+    handler,
+    isPrivate: false,
+  })
+);

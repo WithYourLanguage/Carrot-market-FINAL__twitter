@@ -34,10 +34,10 @@ export default function Login() {
     join(data);
   };
   useEffect(() => {
-    if (joinData?.ok) {
+    if (data?.ok) {
       router.push("/");
     }
-  }, [joinData, router]);
+  }, [data, router]);
   return (
     <div className="w-full h-screen flex justify-center px-72 flex-col">
       <Head>
