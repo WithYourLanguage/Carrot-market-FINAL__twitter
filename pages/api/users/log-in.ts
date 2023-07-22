@@ -25,23 +25,22 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
       });
     } */
     if (!validPassword) {
-      console.log("PASSWORD CHECK", password);
       return res.json({
         ok: false,
-        error: "비밀번호가 같지 않습니다",
+        error: "Email을 또는 Password를 다시 한번 확인해주세요",
       });
     }
     req.session.user = {
       id: user.id,
     };
     await req.session.save();
-    console.log("JSON DATA OK를 보냅니다");
+
     return res.json({
       ok: true,
     });
   } else {
     //  user이 존제하지 않습니다. 닉네임 설정 화면으로 이동시켜 user을 create하세요.
-    console.log("USER NOT FOUND");
+
     /* const data = {
       password,
       email,
@@ -55,12 +54,12 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-    });
+    }); */
 
     return res.json({
-      ok: true,
-      message: "user not found",
-    }); */
+      ok: false,
+      error: "Email을 또는 Password를 다시 한번 확인해주세요",
+    });
   }
 
   console.log(user);

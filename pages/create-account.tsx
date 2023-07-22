@@ -6,6 +6,8 @@ import useMutation from "@lib/client/useMutation";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import isPrivateInterface from "@lib/client/isPrivateInterface";
+import isPrivateFn from "@lib/client/isPrivateFn";
 
 interface LoginForm {
   email: string;
@@ -22,12 +24,13 @@ interface MutationResult {
 export default function Login() {
   const router = useRouter();
   const { register, handleSubmit } = useForm<LoginForm>();
-  const [enter, { loading, data }] =
-    useMutation<MutationResult>("/api/users/log-in");
+  const [enter, { loading, data }] = useMutation<MutationResult>(
+    "/api/users/join-check"
+  );
   const [join, { loading: joinLoading, data: joinData }] =
     useMutation<MutationResult>("/api/users/join"); // { loading: joinLoading, data: joinData }
   const onValid = (data: any) => {
-    console.log(data);
+    
     enter(data);
   };
   const joinOnValid = (data: any) => {
@@ -38,6 +41,8 @@ export default function Login() {
       router.push("/");
     }
   }, [joinData, router]);
+
+  isPrivateFn(false);
   return (
     <div className="w-full h-screen flex justify-center px-72 flex-col">
       <Head>
