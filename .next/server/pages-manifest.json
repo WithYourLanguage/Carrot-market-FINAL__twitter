@@ -4,14 +4,5 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/api/isPrivate": "pages/api/isPrivate.js",
-  "/api/tweet": "pages/api/tweet.js",
-  "/log-in": "pages/log-in.js",
-  "/api/users/log-in": "pages/api/users/log-in.js",
-  "/tweet/[id]": "pages/tweet/[id].js",
-  "/api/users/loginUser": "pages/api/users/loginUser.js",
-  "/api/tweet/[id]/likeExists": "pages/api/tweet/[id]/likeExists.js",
-  "/api/tweet/[id]/tweetData": "pages/api/tweet/[id]/tweetData.js",
-  "/api/tweet/[id]/like": "pages/api/tweet/[id]/like.js",
-  "/tweet/create": "pages/tweet/create.js",
-  "/api/tweet/create": "pages/api/tweet/create.js"
+  "/api/tweet": "pages/api/tweet.js"
 }
