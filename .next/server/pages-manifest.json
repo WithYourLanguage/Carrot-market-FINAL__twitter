@@ -2,11 +2,9 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/api/isPrivate": "pages/api/isPrivate.js",
   "/api/tweet": "pages/api/tweet.js",
   "/": "pages/index.js",
-  "/api/isPrivate": "pages/api/isPrivate.js",
   "/log-in": "pages/log-in.js",
-  "/create-account": "pages/create-account.js",
-  "/api/users/join-check": "pages/api/users/join-check.js",
-  "/api/users/join": "pages/api/users/join.js"
+  "/api/users/log-in": "pages/api/users/log-in.js"
 }
