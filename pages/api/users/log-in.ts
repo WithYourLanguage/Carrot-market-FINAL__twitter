@@ -65,7 +65,7 @@ async function handler(req: any, res: NextApiResponse<ResponseType>) {
   console.log(user);
   // if (!user) return res.status(400).json({ ok: false });
   return res.json({
-    ok: true,
+    ok: true, 
   });
 }
 

@@ -2,7 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/tweet/create": "pages/tweet/create.js",
+  "/api/isPrivate": "pages/api/isPrivate.js",
+  "/api/tweet/[id]/tweetData": "pages/api/tweet/[id]/tweetData.js",
+  "/api/tweet/[id]/likeExists": "pages/api/tweet/[id]/likeExists.js",
   "/api/tweet": "pages/api/tweet.js",
-  "/api/isPrivate": "pages/api/isPrivate.js"
+  "/api/tweet/[id]/like": "pages/api/tweet/[id]/like.js",
+  "/api/users/loginUser": "pages/api/users/loginUser.js"
 }

@@ -24,14 +24,7 @@ export default function createTweet() {
   };
   useEffect(() => {
     if (data?.ok === true) {
-      router.push(`/`); // 추후 상세 페이지 완성되면 이걸 상세 페이지로 redirect하면 됨
-      /* {
-		id: 1,
-		createdAt: 2023-07-21T12:08:13.345Z,
-		updatedAt: 2023-07-21T12:08:13.348Z,
-		tweet: 'First Tweet\n',
-		userId: 10
-	  } */
+      router.push(`/tweet/${data?.tweetCreate?.id}`);
     }
   }, [data, router]);
   /* return (

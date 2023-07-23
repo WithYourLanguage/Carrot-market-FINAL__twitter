@@ -49,6 +49,7 @@ export default function Index() {
   isPrivateFn(true);
   const { data } = useSWR<tweetResponse>("/api/tweet");
   useEffect(() => {}, [data]);
+
   return (
     <div
       className=" w-full flex flex-col justify-center "

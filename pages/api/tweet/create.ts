@@ -20,7 +20,7 @@ async function handler(req: any, res: NextApiResponse) {
       },
     },
   });
-
+  console.log(tweetCreate);
   return res.json({
     ok: true,
     tweetCreate,
