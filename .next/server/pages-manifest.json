@@ -2,9 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/isPrivate": "pages/api/isPrivate.js",
-  "/api/tweet": "pages/api/tweet.js",
   "/": "pages/index.js",
-  "/log-in": "pages/log-in.js",
-  "/api/users/log-in": "pages/api/users/log-in.js"
+  "/api/isPrivate": "pages/api/isPrivate.js",
+  "/api/tweet": "pages/api/tweet.js"
 }
