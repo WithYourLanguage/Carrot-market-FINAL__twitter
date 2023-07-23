@@ -1,42 +1,19 @@
-# Hello World example
+# ⚠️⚠️⚠️⚠️체험하시기 전에 확인해주세요⚠️⚠️⚠️⚠️
+# 콘솔창에 나오는 모든 ERROR은 VSC에서 문제 없음을 확인했습니다.
+# 실제 작동에도 문제 없습니다(vsc에서는 오류 자체가 출력X)
+⭐캐럿마켓 클론코딩 졸업작품에 오신 것을 환영합니다⭐
+ 이 작품은 아래와 같은 기능이 가능합니다 - 게시물 작성
+  - 좋아요 
+  - 수정
+  - 삭제 
+  - 로그인 
+  - 회원가입 등... 
+  일단 이 졸업작품의 경우 vsc에서 작업한 다음 코드샌드박스로 이동시켰습니다(github통해서)
+  
+  그렇기 때문에 vsc에서 모든 기능이 잘 작동했음을 확인했습니다.
+  
+  지금 코드샌드박스 콘솔창에 무슨 error이 하나가 나오는 것 같은데 vsc와 같은 코드임에도 나오는 것은 그냥 코드샌드박스 error로 보입니다. 감사합니다.
+  
+   + 회원가입 하실 때 만약 Loading... 다음에 닉네임 설정 화면으로 넘어가지 않는 경우 해당 이메일이 이미 이용중인 겁니다. 다른 이메일을 입력해주세요
 
-## How to use
-
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/segmentio/create-next-app) with [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) or [npx](https://github.com/zkat/npx#readme) to bootstrap the example:
-
-```bash
-npx create-next-app --example hello-world hello-world-app
-# or
-yarn create next-app --example hello-world hello-world-app
-```
-
-### Download manually
-
-Download the example:
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/hello-world
-cd hello-world
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
-
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
-
-```bash
-now
-```
-
-## The idea behind the example
-
-This example shows the most basic idea behind Next. We have 2 pages: `pages/index.js` and `pages/about.js`. The former responds to `/` requests and the latter to `/about`. Using `next/link` you can add hyperlinks between them with universal routing capabilities. The `day` directory shows that you can have subdirectories.
+   
