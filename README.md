@@ -1,42 +1,6 @@
-# Hello World example
-
-## How to use
-
-### Using `create-next-app`
-
-Execute [`create-next-app`](https://github.com/segmentio/create-next-app) with [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) or [npx](https://github.com/zkat/npx#readme) to bootstrap the example:
-
-```bash
-npx create-next-app --example hello-world hello-world-app
-# or
-yarn create next-app --example hello-world hello-world-app
-```
-
-### Download manually
-
-Download the example:
-
-```bash
-curl https://codeload.github.com/zeit/next.js/tar.gz/canary | tar -xz --strip=2 next.js-canary/examples/hello-world
-cd hello-world
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run dev
-# or
-yarn
-yarn dev
-```
-
-Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
-
-```bash
-now
-```
-
-## The idea behind the example
-
-This example shows the most basic idea behind Next. We have 2 pages: `pages/index.js` and `pages/about.js`. The former responds to `/` requests and the latter to `/about`. Using `next/link` you can add hyperlinks between them with universal routing capabilities. The `day` directory shows that you can have subdirectories.
+## 체점하기 전 확인해주세요!
+일단 제가 2023년 7월 25일 새벽 12:18분까지 시도해 보았지만 결국 github와 코드샌드박스 연동을 포기했습니다.
+계속 코드샌드박스에서 오류가 나서 고쳐주려고 하니 끝도 없어서 그랬습니다.
+일단 제 코드는 VSC에서는 정상 작동하는 코드입니다. 
+# 정말 죄송하지만 파일을 다운로드 하셔서 확인해 주세요. 그럼 정상 작동합니다.
+# 코드샌드박스에서는 정상 작동하지 않습니다
